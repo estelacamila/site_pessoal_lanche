@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lanchonete Delícia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍔 Lanchonete Angélica</h1>
+    <p>Escolha seu lanche preferido abaixo!</p>
+  </header>
+
+  <main class="menu">
+    <!-- Card de lanches -->
+    <div class="card" data-lanche="X-Tudo" data-valor="24.90">
+      <img src="https://t4.ftcdn.net/jpg/04/45/20/41/360_F_445204137_NRRsonq5j1qmf1lj4MJDxgSjjQ4beXHw.jpg" alt="X-Tudo">
+      <h2>X-Tudo</h2>
+      <p>Pão, hambúrguer, queijo, presunto, ovo, bacon, alface, tomate, batata palha.</p>
+      <span class="price">R$ 24,90</span>
+      <button class="selecionar-btn">Selecionar</button>
+    </div>
+
+    <div class="card" data-lanche="X-Bacon" data-valor="22.00">
+      <img src="https://imagens.jotaja.com/produtos/a6f9f375-90cf-4a90-8f36-44ce5147a6f8.jpg" alt="X-Bacon">
+      <h2>X-Bacon</h2>
+      <p>Pão, hambúrguer, queijo, bacon, alface e tomate.</p>
+      <span class="price">R$ 22,00</span>
+      <button class="selecionar-btn">Selecionar</button>
+    </div>
+
+    <div class="card" data-lanche="X-Frango" data-valor="21.00">
+      <img src="https://imagens.jotaja.com/produtos/6dcc15bd-80cb-426f-acd7-2f52de6f75cb.jpg" alt="X-Frango">
+      <h2>X-Frango</h2>
+      <p>Pão, frango grelhado, queijo, alface, tomate e maionese.</p>
+      <span class="price">R$ 21,00</span>
+      <button class="selecionar-btn">Selecionar</button>
+    </div>
+  </main>
+
+  <!-- Modal do pedido -->
+  <div id="pedidoModal" class="modal">
+    <div class="modal-content">
+      <h2 id="modalTitulo">Seu Pedido</h2>
+      <form id="pedidoForm">
+        <input type="hidden" id="lancheNome">
+        <input type="hidden" id="lancheValor">
+
+        <label>Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label>Observações:</label>
+        <textarea id="obs" placeholder="Ex: Bem passado, sem sal, sem alface..."></textarea>
+
+        <label>Forma de pagamento:</label>
+        <select id="pagamento" required>
+          <option value="">Selecione...</option>
+          <option value="Pix">Pix</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão">Cartão</option>
+        </select>
+
+        <button type="submit">Confirmar Pedido</button>
+        <button type="button" id="fecharModal">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
